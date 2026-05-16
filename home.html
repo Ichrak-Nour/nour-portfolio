@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Elichrak | Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .bg {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e 0%, #0a0a0f 70%);
+    z-index: 0;
+  }
+  .container {
+    position: relative; z-index: 10;
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+  }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #c9a84c;
+    letter-spacing: 6px;
+    margin-bottom: 0.5rem;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    letter-spacing: 4px;
+    margin-bottom: 3rem;
+  }
+  .line {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, #c9a84c, transparent);
+    margin: 0 auto 3rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .card {
+    border: 1px solid #2a2a3a;
+    padding: 2rem 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.02);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:hover {
+    border-color: #c9a84c;
+    background: rgba(201,168,76,0.05);
+    transform: translateY(-4px);
+  }
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #c9a84c;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+  }
+  .card-desc {
+    font-size: 0.8rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <h1>NOUR ELICHRAK</h1>
+  <p class="subtitle">SCHOLARSHIP PORTFOLIO 2026</p>
+  <div class="line"></div>
+  <div class="grid">
+    <a href="about.html" class="card">
+      <div class="card-icon">🎓</div>
+      <div class="card-title">ABOUT ME</div>
+      <div class="card-desc">My background, education and story</div>
+    </a>
+    <a href="projects.html" class="card">
+      <div class="card-icon">💻</div>
+      <div class="card-title">PROJECTS</div>
+      <div class="card-desc">AI & web development work</div>
+    </a>
+    <a href="skills.html" class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">SKILLS</div>
+      <div class="card-desc">Technical and personal skills</div>
+    </a>
+    <a href="goals.html" class="card">
+      <div class="card-icon">🌟</div>
+      <div class="card-title">MY GOALS</div>
+      <div class="card-desc">Why Saudi Arabia & my vision</div>
+    </a>
+  </div>
+</div>
+</body>
+</html>
