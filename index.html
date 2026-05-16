@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Elichrak | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    overflow: hidden;
+  }
+  .stars {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e 0%, #0a0a0f 70%);
+    z-index: 0;
+  }
+  .container {
+    position: relative; z-index: 10;
+    text-align: center;
+    padding: 2rem;
+  }
+  .name {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: #c9a84c;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+    animation: fadeUp 1s ease forwards;
+    text-shadow: 0 0 40px rgba(201,168,76,0.3);
+  }
+  .line {
+    width: 100px; height: 1px;
+    background: linear-gradient(to right, transparent, #c9a84c, transparent);
+    margin: 0 auto 1.5rem;
+    animation: fadeUp 1s ease forwards 0.3s; opacity: 0;
+  }
+  .title {
+    font-size: 0.9rem;
+    color: #c9a84c;
+    letter-spacing: 6px;
+    margin-bottom: 0.8rem;
+    animation: fadeUp 1s ease forwards 0.5s; opacity: 0;
+  }
+  .subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 3rem;
+    animation: fadeUp 1s ease forwards 0.7s; opacity: 0;
+  }
+  .btn {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border: 1px solid #c9a84c;
+    color: #c9a84c;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    transition: all 0.3s ease;
+    animation: fadeUp 1s ease forwards 0.9s; opacity: 0;
+  }
+  .btn:hover {
+    background: #c9a84c;
+    color: #0a0a0f;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="stars"></div>
+<div class="container">
+  <h1 class="name">NOUR ELICHRAK</h1>
+  <div class="line"></div>
+  <p class="title">AI STUDENT · ESI ALGIERS</p>
+  <p class="subtitle">Scholarship Portfolio 2026</p>
+  <a href="home.html" class="btn">ENTER</a>
+</div>
+</body>
+</html>
