@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Elichrak | My Goals</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    font-family: 'Raleway', sans-serif;
+    color: #ccc;
+    padding: 3rem 2rem;
+  }
+  .bg {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e 0%, #0a0a0f 70%);
+    z-index: 0;
+  }
+  .container {
+    position: relative; z-index: 10;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .back {
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    transition: color 0.3s;
+  }
+  .back:hover { color: #c9a84c; }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #c9a84c;
+    letter-spacing: 6px;
+    margin-bottom: 0.5rem;
+  }
+  .line {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, #c9a84c, transparent);
+    margin: 1rem 0 3rem;
+  }
+  .card {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 1px solid #1e1e2e;
+    background: rgba(255,255,255,0.02);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .card:hover {
+    border-color: #c9a84c;
+    background: rgba(201,168,76,0.03);
+  }
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .card-icon { font-size: 1.8rem; }
+  .card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #c9a84c;
+    letter-spacing: 3px;
+  }
+  .card p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #777;
+  }
+  .highlight { color: #c9a84c; font-weight: 600; }
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  .timeline-year {
+    font-size: 0.75rem;
+    color: #c9a84c;
+    letter-spacing: 2px;
+    min-width: 60px;
+    padding-top: 2px;
+  }
+  .timeline-text {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.7;
+    border-left: 1px solid #2a2a3a;
+    padding-left: 1rem;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <a href="home.html" class="back">← BACK</a>
+  <h1>MY GOALS</h1>
+  <div class="line"></div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🇸🇦</div>
+      <div class="card-title">WHY SAUDI ARABIA</div>
+    </div>
+    <p>Saudi Arabia's <span class="highlight">Vision 2030</span> places Artificial Intelligence at the heart of its transformation. Studying at <span class="highlight">University of Jeddah</span> means being part of this historic shift — learning AI in a country that is actively building its future with technology. No other destination offers this combination of academic excellence, cultural connection, and real-world AI impact.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🤖</div>
+      <div class="card-title">WHY ARTIFICIAL INTELLIGENCE</div>
+    </div>
+    <p>AI is not just a field — it is the language of the future. My perfect score in <span class="highlight">Mathematics (20/20)</span> and my project building an <span class="highlight">AI-powered fake news detector</span> showed me that this is where my passion and my skills meet. I want to build intelligent systems that solve real problems for the Arab world.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">🗺️</div>
+      <div class="card-title">MY ROADMAP</div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-year">2025</span>
+        <span class="timeline-text">Complete first year at ESI Algiers · Build strong CS foundations</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2026</span>
+        <span class="timeline-text">Begin AI Bachelor's at University of Jeddah · Deepen AI knowledge</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2028</span>
+        <span class="timeline-text">Internship at a Saudi tech company · Apply AI to real projects</span>
+      </div>
+      <div class="timeline-item">
+        <span class="timeline-year">2031</span>
+        <span class="timeline-text">Graduate · Contribute to AI innovation in the Arab world</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <div class="card-icon">💡</div>
+      <div class="card-title">MY VISION</div>
+    </div>
+    <p>I dream of a future where I use Artificial Intelligence to solve challenges specific to the Arab world — from education to healthcare to misinformation. As an Algerian woman in tech, I want to inspire others like me to pursue science without limits. This scholarship is not just an opportunity — it is the <span class="highlight">beginning of my contribution</span> to a better tomorrow.</p>
+  </div>
+
+</div>
+</body>
+</html>
