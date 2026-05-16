@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Elichrak | About Me</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    font-family: 'Raleway', sans-serif;
+    color: #ccc;
+    padding: 3rem 2rem;
+  }
+  .bg {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e 0%, #0a0a0f 70%);
+    z-index: 0;
+  }
+  .container {
+    position: relative; z-index: 10;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .back {
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    transition: color 0.3s;
+  }
+  .back:hover { color: #c9a84c; }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #c9a84c;
+    letter-spacing: 6px;
+    margin-bottom: 0.5rem;
+  }
+  .line {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, #c9a84c, transparent);
+    margin: 1rem 0 3rem;
+  }
+  .section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    border: 1px solid #1e1e2e;
+    background: rgba(255,255,255,0.02);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .section:nth-child(1) { animation-delay: 0.1s; }
+  .section:nth-child(2) { animation-delay: 0.2s; }
+  .section:nth-child(3) { animation-delay: 0.3s; }
+  .section:nth-child(4) { animation-delay: 0.4s; }
+  .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    color: #c9a84c;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+  }
+  .section p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: #888;
+  }
+  .highlight { color: #c9a84c; font-weight: 600; }
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .info-label {
+    font-size: 0.7rem;
+    color: #444;
+    letter-spacing: 3px;
+  }
+  .info-value {
+    font-size: 0.9rem;
+    color: #c9a84c;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <a href="home.html" class="back">← BACK</a>
+  <h1>ABOUT ME</h1>
+  <div class="line"></div>
+
+  <div class="section">
+    <div class="section-title">WHO I AM</div>
+    <p>I am <span class="highlight">Nour Elichrak</span>, a motivated and determined first-year Computer Science student at the <span class="highlight">École Nationale Supérieure d'Informatique (ESI)</span> in Algiers — Algeria's most prestigious computer science institution. I am passionate about Artificial Intelligence, mathematics, and building technology that makes a real difference.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">MY DETAILS</div>
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-label">NATIONALITY</span>
+        <span class="info-value">Algerian 🇩🇿</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">UNIVERSITY</span>
+        <span class="info-value">ESI Algiers</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">BAC SCORE</span>
+        <span class="info-value">18.1 / 20 ⭐</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">MATHS SCORE</span>
+        <span class="info-value">20 / 20 🏆</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">LANGUAGES</span>
+        <span class="info-value">Arabic · French · English</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">SPORT</span>
+        <span class="info-value">Basketball 🏀 National Level</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">MY STORY</div>
+    <p>Growing up in <span class="highlight">Sétif, Algeria</span>, I always had a deep love for mathematics and problem-solving. Achieving a perfect score of <span class="highlight">20/20 in Mathematics</span> in my Baccalaureate was not just a grade — it was a confirmation of my passion. Being accepted into ESI, where only the top students in Algeria gain entry, pushed me to dream bigger and reach further.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">BEYOND ACADEMICS</div>
+    <p>I am a <span class="highlight">national-level basketball player</span>, which has shaped my character through discipline, leadership, and teamwork. I also actively contribute to the <span class="highlight">School of AI</span> club as a designer, and organize tech events with <span class="highlight">SHELLMATES</span> club — always combining creativity with technology.</p>
+  </div>
+</div>
+</body>
+</html>
