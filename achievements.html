@@ -21,7 +21,7 @@
   }
   .container {
     position: relative; z-index: 10;
-    max-width: 750px;
+    max-width: 800px;
     margin: 0 auto;
   }
   .back {
@@ -54,83 +54,74 @@
     margin-bottom: 1.5rem;
     margin-top: 2.5rem;
   }
-  .card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1.5rem;
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .cert-card {
     border: 1px solid #1e1e2e;
     background: rgba(255,255,255,0.02);
-    margin-bottom: 1rem;
+    overflow: hidden;
     transition: all 0.3s ease;
     animation: fadeUp 0.8s ease forwards;
     opacity: 0;
+    cursor: pointer;
   }
-  .card:hover {
+  .cert-card:hover {
     border-color: #c9a84c;
-    background: rgba(201,168,76,0.03);
-    transform: translateX(6px);
+    transform: translateY(-4px);
   }
-  .card:nth-child(1) { animation-delay: 0.05s; }
-  .card:nth-child(2) { animation-delay: 0.1s; }
-  .card:nth-child(3) { animation-delay: 0.15s; }
-  .card:nth-child(4) { animation-delay: 0.2s; }
-  .card:nth-child(5) { animation-delay: 0.25s; }
-  .card:nth-child(6) { animation-delay: 0.3s; }
-  .card:nth-child(7) { animation-delay: 0.35s; }
-  .card:nth-child(8) { animation-delay: 0.4s; }
-  .icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
+  .cert-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
   }
-  .card-content { flex: 1; }
-  .card-title {
-    font-size: 0.95rem;
-    color: #ddd;
-    margin-bottom: 4px;
-    font-weight: 600;
-  }
-  .card-sub {
-    font-size: 0.8rem;
-    color: #555;
+  .cert-card:hover img { transform: scale(1.03); }
+  .cert-label {
+    padding: 0.8rem;
+    font-size: 0.75rem;
+    color: #666;
     letter-spacing: 1px;
-  }
-  .badge {
-    font-size: 0.7rem;
-    padding: 3px 10px;
-    background: rgba(201,168,76,0.1);
-    color: #c9a84c;
-    border: 1px solid rgba(201,168,76,0.2);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .medals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  .medal-card {
-    padding: 1.5rem 1rem;
-    border: 1px solid #1e1e2e;
-    background: rgba(255,255,255,0.02);
     text-align: center;
-    transition: all 0.3s;
-    animation: fadeUp 0.8s ease forwards;
-    opacity: 0;
+    border-top: 1px solid #1e1e2e;
   }
-  .medal-card:hover {
-    border-color: #c9a84c;
-    background: rgba(201,168,76,0.03);
+  .cert-card:nth-child(1) { animation-delay: 0.05s; }
+  .cert-card:nth-child(2) { animation-delay: 0.1s; }
+  .cert-card:nth-child(3) { animation-delay: 0.15s; }
+  .cert-card:nth-child(4) { animation-delay: 0.2s; }
+  .cert-card:nth-child(5) { animation-delay: 0.25s; }
+  .cert-card:nth-child(6) { animation-delay: 0.3s; }
+  .cert-card:nth-child(7) { animation-delay: 0.35s; }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
   }
-  .medal-card:nth-child(1) { animation-delay: 0.1s; }
-  .medal-card:nth-child(2) { animation-delay: 0.2s; }
-  .medal-card:nth-child(3) { animation-delay: 0.3s; }
-  .medal-card:nth-child(4) { animation-delay: 0.4s; }
-  .medal-card:nth-child(5) { animation-delay: 0.5s; }
-  .medal-card:nth-child(6) { animation-delay: 0.6s; }
-  .medal-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-  .medal-text { font-size: 0.75rem; color: #666; line-height: 1.5; }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 1px solid #c9a84c;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+    color: #c9a84c;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+  }
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -139,98 +130,83 @@
 </head>
 <body>
 <div class="bg"></div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <div class="container">
   <a href="home.html" class="back">← BACK</a>
   <h1>ACHIEVEMENTS</h1>
   <div class="line"></div>
 
-  <div class="section-title">🎓 ACADEMIC</div>
-
-  <div class="card">
-    <div class="icon">🥇</div>
-    <div class="card-content">
-      <div class="card-title">Baccalaureate Excellence Award</div>
-      <div class="card-sub">Wilaya of Bordj Bou Arréridj · Grade: 18.10/20 · Mention: Excellent</div>
+  <div class="section-title">🎓 ACADEMIC CERTIFICATES</div>
+  <div class="gallery">
+    <div class="cert-card" onclick="openLightbox('bac-excellence-certificate.jpg')">
+      <img src="bac-excellence-certificate.jpg" alt="BAC Excellence">
+      <div class="cert-label">BAC Excellence Award · 18.10/20 · 2025</div>
     </div>
-    <span class="badge">2025</span>
+    <div class="cert-card" onclick="openLightbox('bac-medal-excellence.jpg')">
+      <img src="bac-medal-excellence.jpg" alt="BAC Medal">
+      <div class="cert-label">Medal of Excellence · BAC 2025</div>
+    </div>
+    <div class="cert-card" onclick="openLightbox('bem-certificate.jpg')">
+      <img src="bem-certificate.jpg" alt="BEM Certificate">
+      <div class="cert-label">BEM Certificate · 17.97/20 · 2022</div>
+    </div>
+    <div class="cert-card" onclick="openLightbox('high-school-excellence.jpg')">
+      <img src="high-school-excellence.jpg" alt="High School Excellence">
+      <div class="cert-label">High School Excellence · 2024</div>
+    </div>
+    <div class="cert-card" onclick="openLightbox('trimester-excellence.jpg')">
+      <img src="trimester-excellence.jpg" alt="Trimester Excellence">
+      <div class="cert-label">Trimester Excellence · 16.57/20</div>
+    </div>
+    <div class="cert-card" onclick="openLightbox('school-appreciation-certificate.jpg')">
+      <img src="school-appreciation-certificate.jpg" alt="Appreciation">
+      <div class="cert-label">Certificate of Appreciation · 2022</div>
+    </div>
+    <div class="cert-card" onclick="openLightbox('middle-school-appreciation.jpg')">
+      <img src="middle-school-appreciation.jpg" alt="Middle School">
+      <div class="cert-label">Middle School Appreciation · 2022</div>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="icon">🏅</div>
-    <div class="card-content">
-      <div class="card-title">Medal of Excellence — High School</div>
-      <div class="card-sub">Lycée Bouzaâroura Saïd · BAC 2025 · Mention: Excellent</div>
+  <div class="section-title">📖 QURAN MEMORIZATION</div>
+  <div class="gallery">
+    <div class="cert-card" onclick="openLightbox('quran-certificate-2022.jpg')">
+      <img src="quran-certificate-2022.jpg" alt="Quran 2022">
+      <div class="cert-label">Holy Quran Memorization · 2022</div>
     </div>
-    <span class="badge">2025</span>
+    <div class="cert-card" onclick="openLightbox('quran-certificate-2023.jpg')">
+      <img src="quran-certificate-2023.jpg" alt="Quran 2023">
+      <div class="cert-label">Holy Quran Memorization · 2023</div>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="icon">🎓</div>
-    <div class="card-content">
-      <div class="card-title">BEM Certificate of Honor</div>
-      <div class="card-sub">Middle School · Grade: 17.97/20 · Mention: Very Good</div>
-    </div>
-    <span class="badge">2022</span>
-  </div>
-
-  <div class="card">
-    <div class="icon">📜</div>
-    <div class="card-content">
-      <div class="card-title">Certificate of Excellence — 2nd Trimester</div>
-      <div class="card-sub">Lycée Bouzaâroura Saïd · Grade: 16.57/20</div>
-    </div>
-    <span class="badge">2024</span>
-  </div>
-
-  <div class="card">
-    <div class="icon">⭐</div>
-    <div class="card-content">
-      <div class="card-title">Certificate of Appreciation — Academic Excellence</div>
-      <div class="card-sub">Middle School · Outstanding performance throughout the year</div>
-    </div>
-    <span class="badge">2022</span>
-  </div>
-
-  <div class="section-title">📖 QURAN</div>
-
-  <div class="card">
-    <div class="icon">🕌</div>
-    <div class="card-content">
-      <div class="card-title">Holy Quran Memorization Certificate</div>
-      <div class="card-sub">Imam Malik Mosque · Bordj Bou Arréridj · Full Quran memorized at age 14</div>
-    </div>
-    <span class="badge">2022 & 2023</span>
-  </div>
-
-  <div class="section-title">🏀 BASKETBALL — NATIONAL LEVEL</div>
-
-  <div class="medals-grid">
-    <div class="medal-card">
-      <div class="medal-icon">🥇</div>
-      <div class="medal-text">Algeria Cup<br>U18 Girls<br>Winner</div>
-    </div>
-    <div class="medal-card">
-      <div class="medal-icon">🥇</div>
-      <div class="medal-text">National Championship<br>U18 Girls<br>Champion</div>
-    </div>
-    <div class="medal-card">
-      <div class="medal-icon">🥉</div>
-      <div class="medal-text">National Medal<br>Basketball<br>Algeria</div>
-    </div>
-    <div class="medal-card">
-      <div class="medal-icon">🏅</div>
-      <div class="medal-text">Algerian Basketball<br>Federation<br>Medal</div>
-    </div>
-    <div class="medal-card">
-      <div class="medal-icon">🏅</div>
-      <div class="medal-text">Regional<br>Championship<br>Medal</div>
-    </div>
-    <div class="medal-card">
-      <div class="medal-icon">🏅</div>
-      <div class="medal-text">Sports Excellence<br>Award<br>2024/2025</div>
+  <div class="section-title">🏀 BASKETBALL MEDALS</div>
+  <div class="gallery">
+    <div class="cert-card" onclick="openLightbox('basketball-medals.jpg')">
+      <img src="basketball-medals.jpg" alt="Basketball Medals">
+      <div class="cert-label">6 National Medals · Algerian Basketball Federation</div>
     </div>
   </div>
 
 </div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
