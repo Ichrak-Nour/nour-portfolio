@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour Elichrak | Projects</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh;
+    background: #0a0a0f;
+    font-family: 'Raleway', sans-serif;
+    color: #ccc;
+    padding: 3rem 2rem;
+  }
+  .bg {
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, #1a0a2e 0%, #0a0a0f 70%);
+    z-index: 0;
+  }
+  .container {
+    position: relative; z-index: 10;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  .back {
+    display: inline-block;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    transition: color 0.3s;
+  }
+  .back:hover { color: #c9a84c; }
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: #c9a84c;
+    letter-spacing: 6px;
+    margin-bottom: 0.5rem;
+  }
+  .line {
+    width: 60px; height: 1px;
+    background: linear-gradient(to right, transparent, #c9a84c, transparent);
+    margin: 1rem 0 3rem;
+  }
+  .project {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 1px solid #1e1e2e;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.3s ease;
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  .project:nth-child(1) { animation-delay: 0.1s; }
+  .project:nth-child(2) { animation-delay: 0.25s; }
+  .project:nth-child(3) { animation-delay: 0.4s; }
+  .project:hover {
+    border-color: #c9a84c;
+    background: rgba(201,168,76,0.03);
+    transform: translateY(-4px);
+  }
+  .project-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .project-icon {
+    font-size: 1.8rem;
+  }
+  .project-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #c9a84c;
+    letter-spacing: 2px;
+  }
+  .project-tag {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: #3d2b6b;
+    background: rgba(201,168,76,0.15);
+    color: #c9a84c;
+    padding: 4px 12px;
+    letter-spacing: 2px;
+  }
+  .project p {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: #777;
+    margin-bottom: 1rem;
+  }
+  .tech-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tech {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border: 1px solid #2a2a3a;
+    color: #555;
+    letter-spacing: 1px;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+  <a href="home.html" class="back">← BACK</a>
+  <h1>PROJECTS</h1>
+  <div class="line"></div>
+
+  <div class="project">
+    <div class="project-header">
+      <div class="project-icon">🤖</div>
+      <div class="project-title">AI FAKE NEWS DETECTOR</div>
+      <span class="project-tag">AI</span>
+    </div>
+    <p>Developed a website using a chatbot system to verify the validity of news articles. The system analyzes content and provides users with a credibility assessment, helping combat misinformation online.</p>
+    <div class="tech-stack">
+      <span class="tech">PYTHON</span>
+      <span class="tech">CHATBOT</span>
+      <span class="tech">WEB DEV</span>
+      <span class="tech">AI</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <div class="project-icon">📋</div>
+      <div class="project-title">TO-DO LIST WEB APP</div>
+      <span class="project-tag">WEB</span>
+    </div>
+    <p>Built a full productivity web application for task management and organization. Focused on clean interface design and smooth functionality to help users manage their daily tasks efficiently.</p>
+    <div class="tech-stack">
+      <span class="tech">HTML</span>
+      <span class="tech">CSS</span>
+      <span class="tech">JAVASCRIPT</span>
+      <span class="tech">UI DESIGN</span>
+    </div>
+  </div>
+
+  <div class="project">
+    <div class="project-header">
+      <div class="project-icon">🎨</div>
+      <div class="project-title">SCHOOL OF AI — DESIGN WORK</div>
+      <span class="project-tag">DESIGN</span>
+    </div>
+    <p>Created visual content, posts, and presentations for the School of AI club. Designed engaging materials that communicate complex AI concepts in an accessible and visually appealing way.</p>
+    <div class="tech-stack">
+      <span class="tech">GRAPHIC DESIGN</span>
+      <span class="tech">PRESENTATIONS</span>
+      <span class="tech">VISUAL CONTENT</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
